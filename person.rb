@@ -5,7 +5,6 @@ class Namable
 end
 
 class Person < Namable
-
   attr_reader :id, :rental
   attr_accessor :name, :age
 
@@ -40,7 +39,6 @@ class Person < Namable
     @rental.push(rent)
     rent.person = self
   end
-
 end
 
 class BaseDecorator < Namable

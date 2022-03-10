@@ -1,5 +1,4 @@
 class Rental
-
   attr_accessor :book, :person
 
   def initialize(book, person)
