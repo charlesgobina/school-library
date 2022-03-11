@@ -1,3 +1,5 @@
+require './rental'
+
 class Namable
   def correct_name
     raise NotImplementedError
@@ -35,9 +37,8 @@ class Person < Namable
     age >= 18
   end
 
-  def add_rental(rent)
-    @rental.push(rent)
-    rent.person = self
+  def add_rental(person, date)
+    Rental.new(date, person, self)
   end
 end
 
