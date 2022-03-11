@@ -4,6 +4,7 @@ require './person.rb'
 require './rental.rb'
 require './student.rb'
 require './teacher.rb'
+require 'pry'
 
 class App
   def run
@@ -29,6 +30,12 @@ class App
   end
 
   def compute_choice(choice)
+    case choice
+    when 3
+      create_person
+    else
+      puts "Enter specified Numbers"
+    end
   end
 
   def create_person
@@ -37,6 +44,7 @@ class App
     case choice
     when 1
       @person.push(create_student)
+      binding.pry
       puts 'Student created successfully'
     when 2
       @person.push(create_teacher)
@@ -49,7 +57,7 @@ class App
 
   def create_student
     print 'Enter student name: '
-    student_name = gets.chomp
+    student_name = gets.chomp.to_i
     puts
     print 'Enter student age: '
     student_age = gets.chomp.to_i
@@ -67,17 +75,4 @@ class App
       create_student
     end
   end
-
-  def create_teacher
-    new_teacher = Teacher.new()
-    print 'Enter teacher name: '
-    teacher_name = gets.chomp
-    puts
-    print 'Enter teacher age: '
-    teacher_age = gets.chomp.to_i
-  end
-
-end 
-
-app_one = App.new
-app_one.options
+end

@@ -10,5 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-teacher_one = Teacher.new()

@@ -1,4 +1,5 @@
 require './rental'
+require 'pry'
 
 class Book
   attr_accessor :title, :author
@@ -13,4 +14,5 @@ class Book
   def add_rental(person, date)
     Rental.new(date, person, self)
   end
+  
 end
