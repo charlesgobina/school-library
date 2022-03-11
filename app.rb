@@ -29,6 +29,12 @@ class App
   end
 
   def compute_choice(choice)
+    case choice
+    when 3
+      create_person
+    else
+      puts 'Please enter the options listed in the menu'
+    end
   end
 
   def create_person
@@ -52,7 +58,7 @@ class App
     student_name = gets.chomp
     puts
     print 'Enter student age: '
-    student_age = gets.chomp.to_i
+    student_age = gets.chomp
     puts
     print 'Is student permitted by parent? [Y] for yes [N] for no: '
     permitted = gets.chomp
@@ -75,6 +81,13 @@ class App
     puts
     print 'Enter teacher age: '
     teacher_age = gets.chomp.to_i
+    puts
+    print 'Enter techer specialization'
+    teacher_spec = gets.chomp
+    puts
+    Teacher.new(teacher_age, teacher_spec, teacher_name)
+    puts 'Teacher created successfully'
+    create_teacher
   end
 
 end 
